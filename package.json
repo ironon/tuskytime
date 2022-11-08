@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "deploy": "npm run generate && firebase deploy",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.11",
+    "snowpack": "^3.8.8"
+  },
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.4.2",
+    "firebase": "^9.10.0"
+  }
+}

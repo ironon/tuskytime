@@ -1,0 +1,13 @@
+:root {
+    --main: rgb(37, 64, 143);
+    --dark-main: rgb(22, 38, 87);
+    --light-main: rgb(104, 130, 211);
+    --lighter-main: rgb(157, 182, 248);
+}
+
+
+html, body, #__nuxt {
+    margin: 0px;
+    height: 100%;
+}
+
