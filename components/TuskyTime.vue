@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import {computed, ref} from "vue"
   import TT from "assets/tuskytime.json"
+  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   function getDate(date) {
     
     // Format day/month/year to two digits
@@ -11,15 +12,16 @@
     // Combine and format date string
     return formattedMonth + '/' + formattedDate
   }
-  function getDay(TT, mmdd, full_date) {
+  function getDay(TT, mmdd, full_date, day) {
     if (TT[mmdd]) {
       TT[mmdd]["full_date"] = full_date
       return TT[mmdd]
 
     }
+    console.log(day)
     return {
       school: false,
-      full_date: full_date
+      full_date: full_date,
     }
     
   }
@@ -32,6 +34,7 @@
   const millisecondsInDay = 8.64e+7
   var day = computed(() => {
     const date = new Date(Date.now() + offset.value * millisecondsInDay)
+    const day = days[date.getDay()]
     const mmddyy = getDate(date)
     const mmdd = mmddyy.slice(0,5)
     
@@ -44,7 +47,7 @@
 
 
 <template>
-  <p id="tt-date">{{day.full_date}}</p>
+  <p id="tt-date">{{day.full_date}}, {{day.day}}</p>
   <div id="tt-menu">
     <button id="changeday" @click="offset -= 1">&lt</button>
     <div v-if="day.school == false" id="tt-info">
