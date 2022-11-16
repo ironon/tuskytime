@@ -11,13 +11,22 @@ const app = getApp()
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app)
-
-const authenticated = ref("")
+const authenticated = auth.currentUser
 const loaded = getLoaded()
 
+if (authenticated) {
+    await navigateTo({
+        path: "study/home"
+    })
+} else {
+    await navigateTo({
+        path: "study/about"
+    })
+}
 function getLoaded() {
     return true
 }
+
 
 
 
