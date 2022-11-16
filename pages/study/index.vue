@@ -1,66 +1,39 @@
 <script setup> 
-    import { initializeApp } from "firebase/app";
+    import { getApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getDatabase, ref as folder, set, onValue} from "firebase/database"
 import { getAuth} from "firebase/auth";
 import { use } from "h3";
-const firebaseConfig = {
-        apiKey: "AIzaSyA62gZmAbAqVdl7ySW9tZlKvIDUBi71ydQ",
-        authDomain: "tuskytime.firebaseapp.com",
-        projectId: "tuskytime",
-        storageBucket: "tuskytime.appspot.com",
-        messagingSenderId: "462748644600",
-        appId: "1:462748644600:web:77801fadbdfac90f37f70d",
-        measurementId: "G-RHMV5QC0XJ"
-};
-const app = initializeApp(firebaseConfig);
+
+
+
+const app = getApp()
 const analytics = getAnalytics(app);
-const auth = getAuth();
-const database = getDatabase()
+const auth = getAuth(app);
+const database = getDatabase(app)
+
 const authenticated = ref("")
-auth.onAuthStateChanged(user => {
-  
-    if (user.auth == null) {
-        authenticated.value = "unknown"
-        return
-    }
-    
-    const userdata = folder(database, `users/${user.uid}`)
+const loaded = getLoaded()
 
-    console.log("getting data")
-    onValue(userdata, (snapshot) => {
-        console.log("accessed snapshot!")
-        const data = snapshot.val()
-        console.log(data)
-    })
-   
-})
+function getLoaded() {
+    return true
+}
 
-const isNewAccount = computed(() => {
-    
-})
 
 
 </script>
 
 <template>
-    <div id="chat" v-if="authenticated.username != null">
-    
-        <div v-if="isNewAccount" id="account-creation">
-            <p>accoutn creation</p>
-        </div>
-        <Chat v-else></Chat>
+    <div id="study" v-if="loaded">
+        <p>TUSKYSTUDY TM</p>
     </div>
-    <div id="chat" v-else-if="authenticated == 'unknown'">
-        <SignIn></SignIn>
-    </div>
-    <div id="chat" v-else>
+    <div id="study" v-else>
         <img id="loading-spinner" src="assets/loadingSpinner.webp"/>
     </div>
 </template>
 
 <style scoped>
-    #chat {
+    #study {
         width: 100%;
         height: 100%;
         display: flex;
