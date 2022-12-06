@@ -3,6 +3,8 @@
     --mainer: rgb(90, 120, 210);
     --dark-main: rgb(22, 38, 87);
     --light-main: rgb(104, 130, 211);
+    --light-dark-main: rgb(157, 176, 232);
+    --lightish-main: rgb(114, 149, 247);
     --lighter-main: rgb(157, 182, 248);
 }
 
@@ -14,4 +16,29 @@ html, body, #__nuxt {
 
 * {
     font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    padding: 0.6rem;
+    border: 0.3rem solid var(--light-main);
+    background-color: var(--lightish-main);
+    box-shadow: 0rem 0.2rem var(--light-main);
+    margin-top: 1rem;
+}
+button:active {
+    padding: 0.6rem;
+    position: relative;
+    top: 0.2rem;
+  
+    /* margin-bottom: 0.2rem; */
+    border: 0.3rem solid var(--light-main);
+    background-color: var(--lightish-main);
+    box-shadow: 0 0;
+    
+}
+
+select, input{
+    background-color: var(--light-dark-main);
+    border: 0.15rem solid var(--main);
+    margin: 0.1rem;
 }

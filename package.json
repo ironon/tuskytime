@@ -2,18 +2,22 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --port=3002",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "deploy": "npm run generate && firebase deploy",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/node": "18.11.1",
     "nuxt": "3.0.0-rc.11",
     "snowpack": "^3.8.8"
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.2",
-    "firebase": "^9.10.0"
+    "firebase": "^9.14.0"
+  },
+  "commands": {
+    "r selectedText": "r(${selectedText})"
   }
 }

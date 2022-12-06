@@ -1,8 +1,9 @@
-<script scoped>
+<script setup lang="ts">
 
-    const onLogOut = async () => {
+    const onLogOut = async (event: MouseEvent) => {
         await logOut()
         navigateTo("/study")
+        return event
     }
 </script>
 

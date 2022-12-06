@@ -8,24 +8,23 @@ import { use } from "h3";
 
 
 const app = getApp()
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const database = getDatabase(app)
-const authenticated = auth.currentUser
-const loaded = getLoaded()
+const auth = getAuth(app).onAuthStateChanged((user) => direct);
+async function direct(auth) {
 
-if (authenticated) {
-    await navigateTo({
-        path: "study/home"
-    })
-} else {
-    await navigateTo({
-        path: "study/about"
-    })
+    const authenticated = await isRegisteredUser(auth)
+    
+    if (authenticated == true) {
+        await navigateTo({
+            path: "study/home"
+        })
+    } else {
+        await navigateTo({
+            path: "study/about"
+        })
+    }
+
 }
-function getLoaded() {
-    return true
-}
+
 
 
 
@@ -33,11 +32,8 @@ function getLoaded() {
 </script>
 
 <template>
-    <div id="study" v-if="loaded">
+    <div id="study">
         <p>TUSKYSTUDY TM</p>
-    </div>
-    <div id="study" v-else>
-        <img id="loading-spinner" src="assets/loadingSpinner.webp"/>
     </div>
 </template>
 

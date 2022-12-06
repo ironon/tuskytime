@@ -26,19 +26,19 @@
 <style scoped>
     #default-layout {
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     #navbox {
         outline: 10px solid var(--main);
         width: 100%;
         height: 10%;
-        top: 0;
-        left: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
         background-color: var(--light-main);
         align-items: center;
-        margin: 0;
+        
     }
     #navbox img {
         max-height: 5rem;
@@ -59,6 +59,7 @@
         background-color: var(--lighter-main);
         width: 100%;
         height: 90%;
+        overflow-y: scroll;
         display: flex;
         justify-content: center;
         flex-direction: column;

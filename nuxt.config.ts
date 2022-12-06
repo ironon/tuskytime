@@ -3,5 +3,8 @@ export default defineNuxtConfig({
     css: [
         'assets/style.css'
     ],
-    ssr: false
+    ssr: false,
+    server: {
+        port: 3002
+    }
 })

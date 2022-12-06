@@ -1,23 +1,23 @@
-globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/node-fetch-native/dist/polyfill.mjs';
+globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/node-fetch-native/dist/polyfill.mjs';
 import { Server } from 'http';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
-import { provider, isWindows } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/std-env/dist/index.mjs';
-import { createRenderer } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { eventHandler, defineEventHandler, handleCacheHeaders, createEvent, createApp, createRouter, lazyEventHandler, getQuery } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/h3/dist/index.mjs';
-import devalue from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { parseURL, withQuery, joinURL } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/ufo/dist/index.mjs';
-import destr from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/scule/dist/index.mjs';
-import { createFetch as createFetch$1, Headers } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/ohmyfetch/dist/node.mjs';
-import { createRouter as createRouter$1 } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/radix3/dist/index.mjs';
-import { createCall, createFetch } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/hookable/dist/index.mjs';
-import { hash } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/ohash/dist/index.mjs';
-import { createStorage } from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/unstorage/dist/drivers/fs.mjs';
+import { provider, isWindows } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/std-env/dist/index.mjs';
+import { createRenderer } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { eventHandler, defineEventHandler, handleCacheHeaders, createEvent, createApp, createRouter, lazyEventHandler, getQuery } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/h3/dist/index.mjs';
+import devalue from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { parseURL, withQuery, joinURL } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/ufo/dist/index.mjs';
+import destr from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/destr/dist/index.mjs';
+import { snakeCase } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/scule/dist/index.mjs';
+import { createFetch as createFetch$1, Headers } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/ohmyfetch/dist/node.mjs';
+import { createRouter as createRouter$1 } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/radix3/dist/index.mjs';
+import { createCall, createFetch } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/hookable/dist/index.mjs';
+import { hash } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/ohash/dist/index.mjs';
+import { createStorage } from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/unstorage/dist/drivers/fs.mjs';
 
 const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routes":{},"envPrefix":"NUXT_"},"public":{}};
 const ENV_PREFIX = "NITRO_";
@@ -76,7 +76,7 @@ function timingMiddleware(_req, res, next) {
   next();
 }
 
-const serverAssets = [{"baseName":"server","dir":"C:/Users/David Macpherson/Documents/Programming/tuskytimev2/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/admin/Documents/Programming/tuskytimev2/server/assets"}];
 
 const assets = createStorage();
 
@@ -90,10 +90,10 @@ const useStorage = () => storage;
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\David Macpherson\\Documents\\Programming\\tuskytimev2","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\David Macpherson\\Documents\\Programming\\tuskytimev2\\server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\David Macpherson\\Documents\\Programming\\tuskytimev2\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\David Macpherson\\Documents\\Programming\\tuskytimev2\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\admin\\Documents\\Programming\\tuskytimev2","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\admin\\Documents\\Programming\\tuskytimev2\\server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\admin\\Documents\\Programming\\tuskytimev2\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\admin\\Documents\\Programming\\tuskytimev2\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function defineRenderHandler(handler) {
   return eventHandler(async (event) => {
@@ -352,7 +352,7 @@ const errorHandler = (async function errorhandler(error, event) {
   const isErrorPage = event.req.url?.startsWith("/__nuxt_error");
   let html = !isErrorPage ? await $fetch(withQuery("/__nuxt_error", errorObject)).catch(() => null) : null;
   if (!html) {
-    const { template } = await import('file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/node_modules/@nuxt/ui-templates/dist/templates/error-dev.mjs') ;
+    const { template } = await import('file://C:/Users/admin/Documents/Programming/tuskytimev2/node_modules/@nuxt/ui-templates/dist/templates/error-dev.mjs') ;
     {
       errorObject.description = errorObject.message;
     }
@@ -362,11 +362,11 @@ const errorHandler = (async function errorhandler(error, event) {
   event.res.end(html);
 });
 
-const _lazy_5XJVaI = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_CCHaVF = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_5XJVaI, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_5XJVaI, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_CCHaVF, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_CCHaVF, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -450,7 +450,7 @@ function publicAssetsURL(...path) {
   return path.length ? joinURL(publicBase, ...path) : publicBase;
 }
 
-const getClientManifest = () => import('file://C:/Users/David%20Macpherson/Documents/Programming/tuskytimev2/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getClientManifest = () => import('file://C:/Users/admin/Documents/Programming/tuskytimev2/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getSPARenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   const options = {
