@@ -33,7 +33,7 @@
         </div>
         <div id="footer">
             <p>not affiliated with LCPS or Tuscarora but that'd be pretty cool if I was </p>
-            <p>Made by 875497@lcps.org</p>
+            <p>Made by David Macpherson, 875497@lcps.org</p>
         </div>
     </div>
 </template>
