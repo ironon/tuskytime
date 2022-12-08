@@ -1,18 +1,22 @@
 <script setup> 
-    import { getApp, initializeApp } from "firebase/app";
+import { getApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getDatabase, ref as folder, set, onValue} from "firebase/database"
 import { getAuth} from "firebase/auth";
 import { use } from "h3";
-
+//factor this page out entirely
 
 
 const app = getApp()
-const auth = getAuth(app).onAuthStateChanged((user) => direct);
-async function direct(auth) {
+const auth = getAuth(app)
+console.log("Getting auth...")
+console.log(auth)
 
+auth.onAuthStateChanged((user) => direct);
+async function direct(auth) {
+    console.log("Redirecting....")
     const authenticated = await isRegisteredUser(auth)
-    
+    console.log("Got auth!")
     if (authenticated == true) {
         await navigateTo({
             path: "study/home"
@@ -33,7 +37,7 @@ async function direct(auth) {
 
 <template>
     <div id="study">
-        <p>TUSKYSTUDY TM</p>
+        <p>Please wait...</p>
     </div>
 </template>
 

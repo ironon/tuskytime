@@ -38,11 +38,14 @@ export const sendCreateAccount = async (info) => {
     await setDoc(userDataRef, info)
     
 }
-export const isRegisteredUser = async (authIns: Auth) => {
+export const isLoggedIn = async (authIns) => {
     if (authIns.currentUser == null) {
         console.log("Current user is null!")
         return false
     }
+    return true
+}
+export const isRegisteredUser = async (authIns: Auth) => {
     console.log(authIns)
     const db = getFirestore()
     console.log("Getting user data!")
