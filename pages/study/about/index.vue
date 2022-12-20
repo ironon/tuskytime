@@ -1,15 +1,15 @@
 <script setup lang="ts">
 
-    const auth = await joinUser()
-    const isRegistered = await isRegisteredUser(auth)
-    if (isRegistered) {
-        navigateTo("/study/home")
-    }
+    // const auth = await joinUser()
+    // const isRegistered = await isRegisteredAuth(auth)
+    // if (isRegistered) {
+    //     navigateTo("/study/home")
+    // }
     var onJoinButtonClick = async (event: MouseEvent) => {
         console.log("Crunching numbers...")
         const auth = await joinUser()
         console.log("Joined user, seeing if registered...")
-        const isRegistered = await isRegisteredUser(auth)
+        const isRegistered = await isRegisteredAuth(auth)
         console.log(isRegistered)
         if (isRegistered) {
             console.log("User is signed in, navigating...")

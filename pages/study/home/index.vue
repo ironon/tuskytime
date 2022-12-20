@@ -2,7 +2,7 @@
 
     const onLogOut = async (event: MouseEvent) => {
         await logOut()
-        navigateTo("/study")
+        navigateTo("/study/about")
         return event
     }
 </script>

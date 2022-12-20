@@ -3,31 +3,10 @@ import { getApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getDatabase, ref as folder, set, onValue} from "firebase/database"
 import { getAuth} from "firebase/auth";
-import { use } from "h3";
-//factor this page out entirely
 
-
-const app = getApp()
-const auth = getAuth(app)
-console.log("Getting auth...")
-console.log(auth)
-
-auth.onAuthStateChanged((user) => direct);
-async function direct(auth) {
-    console.log("Redirecting....")
-    const authenticated = await isRegisteredUser(auth)
-    console.log("Got auth!")
-    if (authenticated == true) {
-        await navigateTo({
-            path: "study/home"
-        })
-    } else {
-        await navigateTo({
-            path: "study/about"
-        })
-    }
-
-}
+setTimeout(() => {
+    navigateTo("/")
+}, 2000)
 
 
 
@@ -37,7 +16,9 @@ async function direct(auth) {
 
 <template>
     <div id="study">
-        <p>Please wait...</p>
+        <h1>you shouldnt be seeing this page</h1>
+        <p>frick i messed up</p> 
+        <p>move along you never saw this</p>
     </div>
 </template>
 
@@ -47,6 +28,7 @@ async function direct(auth) {
         height: 100%;
         display: flex;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
     }
     #loading-spinner {

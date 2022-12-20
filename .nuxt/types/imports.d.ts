@@ -3,6 +3,7 @@ export {}
 declare global {
   const abortNavigation: typeof import('../../node_modules/nuxt/dist/app')['abortNavigation']
   const addRouteMiddleware: typeof import('../../node_modules/nuxt/dist/app')['addRouteMiddleware']
+  const chooseStudyPage: typeof import('../../composables/useFirebase')['chooseStudyPage']
   const clearError: typeof import('../../node_modules/nuxt/dist/app')['clearError']
   const computed: typeof import('vue')['computed']
   const createError: typeof import('../../node_modules/nuxt/dist/app')['createError']
@@ -20,6 +21,7 @@ declare global {
   const getCourses: typeof import('../../composables/getCourses')['getCourses']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getFirebaseApp: typeof import('../../composables/useFirebase')['getFirebaseApp']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
   const isLoggedIn: typeof import('../../composables/useFirebase')['isLoggedIn']
@@ -29,6 +31,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const isRegisteredAuth: typeof import('../../composables/useFirebase')['isRegisteredAuth']
   const isRegisteredUser: typeof import('../../composables/useFirebase')['isRegisteredUser']
   const isShallow: typeof import('vue')['isShallow']
   const isVue2: typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue2']
@@ -61,6 +64,7 @@ declare global {
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
   const refreshNuxtData: typeof import('../../node_modules/nuxt/dist/app')['refreshNuxtData']
+  const repeatSkullEmojis: typeof import('../../composables/useFirebase')['repeatSkullEmojis']
   const resolveComponent: typeof import('vue')['resolveComponent']
   const sendCreateAccount: typeof import('../../composables/useFirebase')['sendCreateAccount']
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app')['setPageLayout']
@@ -114,6 +118,7 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly abortNavigation: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['abortNavigation']>
     readonly addRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['addRouteMiddleware']>
+    readonly chooseStudyPage: UnwrapRef<typeof import('../../composables/useFirebase')['chooseStudyPage']>
     readonly clearError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['clearError']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['createError']>
@@ -131,6 +136,7 @@ declare module '@vue/runtime-core' {
     readonly getCourses: UnwrapRef<typeof import('../../composables/getCourses')['getCourses']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getFirebaseApp: UnwrapRef<typeof import('../../composables/useFirebase')['getFirebaseApp']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isLoggedIn: UnwrapRef<typeof import('../../composables/useFirebase')['isLoggedIn']>
@@ -140,6 +146,7 @@ declare module '@vue/runtime-core' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly isRegisteredAuth: UnwrapRef<typeof import('../../composables/useFirebase')['isRegisteredAuth']>
     readonly isRegisteredUser: UnwrapRef<typeof import('../../composables/useFirebase')['isRegisteredUser']>
     readonly isShallow: UnwrapRef<typeof import('vue')['isShallow']>
     readonly isVue2: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue2']>
@@ -172,6 +179,7 @@ declare module '@vue/runtime-core' {
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly refreshNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['refreshNuxtData']>
+    readonly repeatSkullEmojis: UnwrapRef<typeof import('../../composables/useFirebase')['repeatSkullEmojis']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly sendCreateAccount: UnwrapRef<typeof import('../../composables/useFirebase')['sendCreateAccount']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['setPageLayout']>

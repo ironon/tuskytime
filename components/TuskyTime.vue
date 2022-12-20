@@ -65,7 +65,7 @@ import { off } from "process";
     
     <button id="changeday" @click="modifyOffset(-1)">&lt</button>
     <div v-if="day.school == false" id="tt-info">
-      <h1> NO SCHOOL!!!</h1>
+      <h1> NO SCHOOL!?!!</h1>
       <img src="assets/school.png"/>
       <div id="datepickerdiv">
         <Datepicker v-model="selectedDate" id="datepicker" :enable-time-picker="false"></Datepicker>

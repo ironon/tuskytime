@@ -1,8 +1,19 @@
 <script setup>
     var offsetV = useState(() => 0)
+    var studyEnabled = true
     function mousemove(event) {
         offsetV.value = event.x
-        console.log(offsetV.value)
+    
+    }
+    async function onStudyClick() {
+        if (!studyEnabled) {
+            return false
+        }
+        console.log("Study is enabled, redirecting.")
+        const redirectLocation = await chooseStudyPage()
+        navigateTo({
+            path: redirectLocation
+        })
     }
     const css = computed(() => {
         const newVal = 'left: ' + (offsetV.value) + 'px'
@@ -15,7 +26,7 @@
     <div id="default-layout">
         <div id="navbox">
             <NuxtLink class="coming-soon">
-                <p @mousemove="mousemove">Study</p>
+                <p @mousemove="mousemove" @click="onStudyClick">Study</p>
             </NuxtLink>
             <img src="/assets/tuskylogo.png"/>
             <h1 id="nav-title">TUSKY TIME</h1>
