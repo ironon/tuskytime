@@ -3,7 +3,6 @@
   import TT from "assets/tuskytime.json"
   import Datepicker from '@vuepic/vue-datepicker';
   import '@vuepic/vue-datepicker/dist/main.css';
-import { off } from "process";
   const days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   function getDate(date) {
     
@@ -31,17 +30,18 @@ import { off } from "process";
     
   }
   function getToday() {
-    return new Date(Date.now() + offset.value * millisecondsInDay)
+    return new Date(Date.now())
   }
   function modifyOffset(newoffset) {
-    offset.value += newoffset
-    selectedDate.value = getToday()
+    const newDate = new Date(selectedDate.value.getTime() + (newoffset * millisecondsInDay))
+    selectedDate.value = newDate
+   
   }
   function getAdvisoryQuote() {
     const options = ["bro it's wednesday", "wendsasydadsy", "duhh", `"hmm it's wednesday i wonder what TT it is"`, "busky bime"]
     return options[Math.floor(Math.random() * options.length)]
   }
-  const offset = ref(0)
+
   const millisecondsInDay = 8.64e+7
   const selectedDate = useState(() => getToday())
   var day = computed(() => {
@@ -70,6 +70,7 @@ import { off } from "process";
       <div id="datepickerdiv">
         <Datepicker v-model="selectedDate" id="datepicker" :enable-time-picker="false"></Datepicker>
       </div>
+
     </div>
     
     <div v-else id="tt-info">
