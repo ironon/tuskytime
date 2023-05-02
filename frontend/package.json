@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.1.1",
+    "@astrojs/vue": "^2.1.1",
+    "@excalidraw/excalidraw": "^0.15.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "@vuepic/vue-datepicker": "^4.5.1",
+    "astro": "^2.3.2",
+    "firebase": "^9.21.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vue": "^3.2.47"
+  }
+}

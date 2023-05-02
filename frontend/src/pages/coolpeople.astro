@@ -1,0 +1,43 @@
+---
+import DefaultLayout from "../layouts/Layout.astro"
+---
+
+<DefaultLayout>
+    <div id="coolpeoplecontainer">
+            <div id="coolpeople">
+                <h1 id="coolkidstitle">COOL KIDS LIST</h1>
+                <p class="opacity-70" id="coolpeopledesc">a list of people that have helped in the making of this website (or they're just that cool)</p>
+                <ul>
+                    <li class="coolpersonlist" id="0">Ethan Edwards - came up with the idea for this website</li>
+                    <li class="coolpersonlist" id="1">Jacob Jackson - Various QOL ideas</li>
+                    <li class="coolpersonlist" id="2">Easton Snow - identified mobile bug for this very page</li>
+                    <li class="coolpersonlist" id="3">Isaiah Williams - idea of calendar widget</li>
+                </ul>
+            </div>
+        <p id="joketext" class="opacity-25">this list is all inclusive. if ur not on it, im sorry for your loss.</p>
+    </div>
+</DefaultLayout>
+
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    #coolpeople {
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    #joketext {
+        text-align: center;
+    }
+    #coolpeopledesc, .coolpersonlist, #joketext, #coolkidstitle{
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        margin: 1rem;
+    }
+    #coolkidstitle {
+        font-size: 3rem;
+    }
+    
+</style>

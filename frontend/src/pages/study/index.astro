@@ -1,0 +1,9 @@
+---
+
+import MinimizeableLayout from "../../layouts/MinimizeableLayout.astro"
+import {TuskyStudy} from "../../components/TuskyStudy"
+---
+
+<MinimizeableLayout>
+    <TuskyStudy client:idle client:only="react"/>
+</MinimizeableLayout>
