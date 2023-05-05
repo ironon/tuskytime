@@ -1,0 +1,40 @@
+---
+
+import MinimizeableLayout from "../../layouts/default.vue"
+import ConceptsView from "../../components/ConceptsView.vue"
+---
+
+<MinimizeableLayout client:only="vue" minimizable={true}>
+    <ConceptsView client:only="vue"></ConceptsView>
+   
+</MinimizeableLayout>
+
+<script is:inline>
+        function waitForElm(selector) {
+            return new Promise(resolve => {
+                if (document.querySelector(selector)) {
+                    return resolve(document.querySelector(selector));
+                }
+
+                const observer = new MutationObserver(mutations => {
+                    if (document.querySelector(selector)) {
+                        resolve(document.querySelector(selector));
+                        observer.disconnect();
+                    }
+                });
+
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                    });
+                });
+            }
+        
+    waitForElm(".addconcept").then((elm) => {
+        elm.addEventListener("click", () => {
+            //@ts-ignore
+            window.location = "/study/concepts/"+window.gotoCanvasId
+        })
+    })
+    
+</script>

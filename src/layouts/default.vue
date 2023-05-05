@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
+    let props = defineProps(["minimizable"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
@@ -14,10 +15,13 @@
 </script>
 
 <template>
+        <head>
+            <link rel="stylesheet" href="/assets/style.css" />
+        </head>
         <div id="default-layout">
-            <button id="minimizebutton" @click="minimize">v</button>
+            <button id="minimizebutton" @click="minimize" v-if="props.minimizable">v</button>
             <div id="navbox" :style="minimized">
-                
+                <a class="nav-link" href="/study">Study</a>
                 <img src="/assets/tuskylogo.png"/>
                 <h1 id="nav-title">TUSKY TIME</h1>
                 <a class="nav-link" href="/">Home</a>
@@ -43,9 +47,9 @@
     font-size: large;
     margin: 0;
     position: absolute;
-    top: 0;
-    right: 0;
-    
+    top: 1rem;
+    right: 7rem;
+    z-index: 10;
    
 }
 </style>
