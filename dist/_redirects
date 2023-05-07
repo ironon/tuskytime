@@ -1,0 +1,4 @@
+/                           /.netlify/functions/entry    200
+/coolpeople                 /.netlify/functions/entry    200
+/study                      /.netlify/functions/entry    200
+/study/concepts/:concept    /.netlify/functions/entry    200
