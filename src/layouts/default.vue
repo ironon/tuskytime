@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
-    let props = defineProps(["minimizable", "addQuestion"])
+    let props = defineProps(["minimizable"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
@@ -12,9 +12,7 @@
             minimized.value = minimized_style
         }
     }
-    function addQuestion() {
-
-    }
+  
 </script>
 
 <template>

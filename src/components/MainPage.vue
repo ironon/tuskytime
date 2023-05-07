@@ -2,7 +2,7 @@
  
     // import { getAnalytics } from "firebase/analytics";
     // import {initializeApp} from "firebase/app"
-    // import TuskyTime from "./TuskyTime.vue";
+    import TuskyTime from "./TuskyTime.vue";
     // const firebaseConfig = {
     //     apiKey: "AIzaSyA62gZmAbAqVdl7ySW9tZlKvIDUBi71ydQ",
     //     authDomain: "tuskytime.firebaseapp.com",
