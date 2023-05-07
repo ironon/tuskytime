@@ -18,18 +18,41 @@ export interface Concept {
     timeCreated:  number;
     timeUpdated: number;
     favorite: boolean;
+    previewImage?: string,
     canvasData: CanvasData,
 }
+
+
+export function blobToDataURL(blob: Blob): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = _e => resolve(reader.result as string);
+      reader.onerror = _e => reject(reader.error);
+      reader.onabort = _e => reject(new Error("Read aborted"));
+      reader.readAsDataURL(blob);
+    });
+  }
+  //thanks stack overflow
 
 
 //function that returns the time in hh:mm:ss format
 function loadConcepts(): Concept[] {
     let tempConcepts = localStorage.getItem("concepts");
     if (tempConcepts) {
-        return JSON.parse(tempConcepts);
+        let obj:Concept[] = JSON.parse(tempConcepts)
+        obj = obj.filter((val) => {
+            if (val === null) {
+                return false
+            }
+            return true
+        })
+        console.log(obj)
+        return obj
+
     } else {
         return [];
     }
+    
 }
 
 let concepts = loadConcepts()
@@ -54,7 +77,6 @@ function saveConcept(concept: Concept){
 function getAppState(): AppState {
     return {
         viewBackgroundColor: "#bacaf7",
-        zenModeEnabled: true,
         //@ts-ignore
         collaborators: [],
     };
@@ -74,6 +96,8 @@ export function createNewConcept(): Concept{
             //@ts-ignore
             appState: getAppState(),
             elements: [],
+            files: {},
+            libraryItems: []
             // scrollToContent: true
           }
     }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
-    let props = defineProps(["minimizable"])
+    let props = defineProps(["minimizable", "addQuestion"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
@@ -12,6 +12,9 @@
             minimized.value = minimized_style
         }
     }
+    function addQuestion() {
+
+    }
 </script>
 
 <template>
@@ -20,6 +23,7 @@
         </head>
         <div id="default-layout">
             <button id="minimizebutton" @click="minimize" v-if="props.minimizable">v</button>
+            
             <div id="navbox" :style="minimized">
                 <a class="nav-link" href="/study">Study</a>
                 <img src="/assets/tuskylogo.png"/>
