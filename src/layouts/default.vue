@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
-    let properties = defineProps(["minimizable"])
+    // let properties = defineProps(["minimizable"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
@@ -20,7 +20,7 @@
             <link rel="stylesheet" href="/assets/style.css" />
         </head>
         <div id="default-layout">
-            <button id="minimizebutton" @click="minimize" v-if="properties.minimizable">v</button>
+            <button id="minimizebutton" @click="minimize">v</button>
     
             <div id="navbox" :style="minimized">
                 <a class="nav-link" href="/study">Study</a>
