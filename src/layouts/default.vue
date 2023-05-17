@@ -11,7 +11,7 @@
         } else {
             minimized.value = minimized_style
         }
-    }np
+    }
   
 </script>
 
@@ -21,7 +21,7 @@
         </head>
         <div id="default-layout">
             <button id="minimizebutton" @click="minimize" v-if="properties.minimizable">v</button>
-            
+    
             <div id="navbox" :style="minimized">
                 <a class="nav-link" href="/study">Study</a>
                 <img src="/assets/tuskylogo.png"/>
