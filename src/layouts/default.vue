@@ -11,7 +11,7 @@
         } else {
             minimized.value = minimized_style
         }
-    }
+    }np
   
 </script>
 
