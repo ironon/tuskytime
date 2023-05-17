@@ -4,7 +4,7 @@ import MinimizeableLayout from "../../layouts/default.vue"
 import ConceptsView from "../../components/ConceptsView.vue"
 ---
 
-<MinimizeableLayout client:only="vue" minimizable={true}>
+<MinimizeableLayout client:load minimizable={true}>
     <ConceptsView client:only="vue"></ConceptsView>
    
 </MinimizeableLayout>
