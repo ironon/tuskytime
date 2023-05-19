@@ -7,12 +7,12 @@ const $$Astro$3 = createAstro();
 const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Index$1;
-  return renderTemplate`${renderComponent($$result, "NormalLayout", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/layouts/default.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`  
-    ${renderComponent($$result2, "MainPage", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/components/MainPage.vue", "client:component-export": "default" })}
+  return renderTemplate`${renderComponent($$result, "NormalLayout", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime/src/layouts/layout.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`  
+    ${renderComponent($$result2, "MainPage", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime/src/components/MainPage.vue", "client:component-export": "default" })}
 ` })}`;
-}, "C:/Users/david/Programming/tuskytime2/src/pages/index.astro");
+}, "C:/Users/david/Programming/tuskytime/src/pages/index.astro");
 
-const $$file$3 = "C:/Users/david/Programming/tuskytime2/src/pages/index.astro";
+const $$file$3 = "C:/Users/david/Programming/tuskytime/src/pages/index.astro";
 const $$url$3 = "";
 
 const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
@@ -26,7 +26,7 @@ const $$Astro$2 = createAstro();
 const $$Coolpeople = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Coolpeople;
-  return renderTemplate`${renderComponent($$result, "DefaultLayout", null, { "client:only": "vue", "client:component-hydration": "only", "class": "astro-DKUQK47Z", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/layouts/default.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`
+  return renderTemplate`${renderComponent($$result, "DefaultLayout", null, { "client:only": "vue", "client:component-hydration": "only", "class": "astro-DKUQK47Z", "client:component-path": "C:/Users/david/Programming/tuskytime/src/layouts/layout.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`
     ${maybeRenderHead($$result2)}<div id="coolpeoplecontainer" class="astro-DKUQK47Z">
             <div id="coolpeople" class="astro-DKUQK47Z">
                 <h1 id="coolkidstitle" class="astro-DKUQK47Z">COOL KIDS LIST</h1>
@@ -41,9 +41,9 @@ const $$Coolpeople = createComponent(async ($$result, $$props, $$slots) => {
         <p id="joketext" class="opacity-25 astro-DKUQK47Z">this list is all inclusive. if ur not on it, im sorry for your loss.</p>
     </div>
 ` })}`;
-}, "C:/Users/david/Programming/tuskytime2/src/pages/coolpeople.astro");
+}, "C:/Users/david/Programming/tuskytime/src/pages/coolpeople.astro");
 
-const $$file$2 = "C:/Users/david/Programming/tuskytime2/src/pages/coolpeople.astro";
+const $$file$2 = "C:/Users/david/Programming/tuskytime/src/pages/coolpeople.astro";
 const $$url$2 = "/coolpeople";
 
 const _page1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
@@ -62,11 +62,11 @@ const _export_sfc = (sfc, props) => {
 };
 
 const _sfc_main = /* @__PURE__ */ defineComponent({
-  __name: "default",
+  __name: "layout",
   props: ["minimizable"],
   setup(__props, { expose: __expose }) {
     __expose();
-    const properties = __props;
+    const dproperties = __props;
     let minimized_style = "display: none";
     let maximized_style = "";
     let minimized = ref(maximized_style);
@@ -78,10 +78,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         minimized.value = minimized_style;
       }
     }
-    const __returned__ = { get properties() {
-      return properties;
-    }, set properties(v) {
-      properties = v;
+    const __returned__ = { get dproperties() {
+      return dproperties;
+    }, set dproperties(v) {
+      dproperties = v;
     }, get minimized_style() {
       return minimized_style;
     }, set minimized_style(v) {
@@ -113,7 +113,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/layouts/default.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/layouts/layout.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 const MinimizeableLayout = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
@@ -127,12 +127,12 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Index;
   return renderTemplate(_a || (_a = __template(["", '\n\n<script>\n        function waitForElm(selector) {\n            return new Promise(resolve => {\n                if (document.querySelector(selector)) {\n                    return resolve(document.querySelector(selector));\n                }\n\n                const observer = new MutationObserver(mutations => {\n                    if (document.querySelector(selector)) {\n                        resolve(document.querySelector(selector));\n                        observer.disconnect();\n                    }\n                });\n\n                observer.observe(document.body, {\n                    childList: true,\n                    subtree: true\n                    });\n                });\n            }\n        \n    waitForElm(".addconcept").then((elm) => {\n        elm.addEventListener("click", () => {\n            //@ts-ignore\n            window.location = "/study/concepts/"+window.gotoCanvasId\n        })\n    })\n    \n<\/script>'])), renderComponent($$result, "MinimizeableLayout", MinimizeableLayout, {}, { "default": ($$result2) => renderTemplate`
-    ${renderComponent($$result2, "ConceptsView", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/components/ConceptsView.vue", "client:component-export": "default" })}
+    ${renderComponent($$result2, "ConceptsView", null, { "client:only": "vue", "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime/src/components/ConceptsView.vue", "client:component-export": "default" })}
    
 ` }));
-}, "C:/Users/david/Programming/tuskytime2/src/pages/study/index.astro");
+}, "C:/Users/david/Programming/tuskytime/src/pages/study/index.astro");
 
-const $$file$1 = "C:/Users/david/Programming/tuskytime2/src/pages/study/index.astro";
+const $$file$1 = "C:/Users/david/Programming/tuskytime/src/pages/study/index.astro";
 const $$url$1 = "/study";
 
 const _page2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
@@ -147,12 +147,12 @@ const $$concept = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$concept;
   let conceptName = Astro2.params.concept;
-  return renderTemplate`${renderComponent($$result, "Layout", null, { "client:only": "vue", "minimizable": true, "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/layouts/default.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`
-  ${renderComponent($$result2, "ConceptEdit", null, { "client:only": "react", "conceptName": conceptName, "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime2/src/components/ConceptEdit", "client:component-export": "ConceptEdit" })}
+  return renderTemplate`${renderComponent($$result, "Layout", null, { "client:only": "vue", "minimizable": true, "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime/src/layouts/layout.vue", "client:component-export": "default" }, { "default": ($$result2) => renderTemplate`
+  ${renderComponent($$result2, "ConceptEdit", null, { "client:only": "react", "conceptName": conceptName, "client:component-hydration": "only", "client:component-path": "C:/Users/david/Programming/tuskytime/src/components/ConceptEdit", "client:component-export": "ConceptEdit" })}
 ` })}`;
-}, "C:/Users/david/Programming/tuskytime2/src/pages/study/concepts/[concept].astro");
+}, "C:/Users/david/Programming/tuskytime/src/pages/study/concepts/[concept].astro");
 
-const $$file = "C:/Users/david/Programming/tuskytime2/src/pages/study/concepts/[concept].astro";
+const $$file = "C:/Users/david/Programming/tuskytime/src/pages/study/concepts/[concept].astro";
 const $$url = "/study/concepts/[concept]";
 
 const _page3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

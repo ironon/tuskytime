@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
-    let properties = defineProps(["minimizable"])
+    let dproperties = defineProps(["minimizable"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
