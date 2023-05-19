@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
-    // let properties = defineProps(["minimizable"])
+    let properties = defineProps(["minimizable"])
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
@@ -17,10 +17,11 @@
 
 <template>
         <head>
+            <link rel="stylesheet" href="/assets/main.css" />
             <link rel="stylesheet" href="/assets/style.css" />
         </head>
         <div id="default-layout">
-            <button id="minimizebutton" @click="minimize">v</button>
+            <button id="minimizebutton" @click="minimize" v-if="minimizable">v</button>
     
             <div id="navbox" :style="minimized">
                 <a class="nav-link" href="/study">Study</a>
@@ -30,7 +31,7 @@
             
             </div>
             <div id="app">
-                <slot/>
+                <slot></slot>
             </div>
             <div id="footer">
                 <p>not affiliated with LCPS or Tuscarora but that'd be pretty cool if I was </p>
@@ -40,18 +41,3 @@
         </div>
 </template>
 
-<style scoped>
-#minimizebutton {
-    border: 0.1rem solid black;
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    font-size: large;
-    margin: 0;
-    position: absolute;
-    top: 1rem;
-    right: 7rem;
-    z-index: 10;
-   
-}
-</style>

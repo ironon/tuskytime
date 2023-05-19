@@ -1,8 +1,9 @@
 ---
 import MainPage from "../components/MainPage.vue"
 import NormalLayout from "../layouts/default.vue"
+// import "@vuepic/vue-datepicker/dist/main.css"
 ---
 
-<NormalLayout client:load>  
-    <MainPage/>
+<NormalLayout client:only="vue">  
+    <MainPage client:only="vue"></MainPage>
 </NormalLayout>

@@ -31,17 +31,12 @@ html, body, #__nuxt {
 }
 
 #addquestion {
-    border: 0.1rem solid black;
-    width: 10rem;
-    height: 2rem;
-    padding: 0;
-    font-size: large;
-    margin: 0;
-    position: absolute;
-    top: 1rem;
-    right: 7rem;
+    position: fixed;
+    top: 10px; /* Adjust the top value as needed */
+    right: 10px; /* Adjust the right value as needed */
+    transform: translate(-150px, 0); /* Optional: reset any previous translation */
     z-index: 10;
-   
+    font-size: smaller;
 }
 p { 
     font-weight: normal;
@@ -91,6 +86,15 @@ select, input{
     background-color: var(--light-main);
     align-items: center;
     
+}
+
+/* Position #minimizebutton in the top right corner regardless of screen size */
+#minimizebutton {
+    position: fixed;
+    top: 10px; /* Adjust the top value as needed */
+    right: 10px; /* Adjust the right value as needed */
+    transform: translate(-100px, 0); /* Optional: reset any previous translation */
+    z-index: 10;
 }
 #navbox img {
     max-height: 5rem;
@@ -180,3 +184,86 @@ a {
     top: 1rem;
     left: 1rem;
   }
+
+  #main-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+}
+
+
+#tt-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lighter-main);
+  }
+  #datepickerdiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+  .dp__theme_light {
+    --dp-background-color: rgb(129, 158, 236);
+    --dp-text-color: #3242f1;
+    --dp-hover-color: #442bd0;
+    --dp-hover-text-color: #212121;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #1976d2;
+    --dp-primary-text-color: #f8f5f5;
+    --dp-secondary-color: #0a2c70;
+    --dp-border-color: rgb(33, 5, 245);
+    --dp-menu-border-color: rgb(21, 21, 220);
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: #3a41c4;
+    --dp-success-color-disabled: #a3d9b1;
+    --dp-icon-color: #083adf;
+    --dp-danger-color: #8ef1e9;
+    --dp-highlight-color: rgba(25, 118, 210, 0.1);
+ }
+  #tt-info {
+    text-align: center;
+    width: 42%;
+    font-size: min(1rem, 2.5vmin);
+  }
+  #tt-info img {
+    width: 100%;
+  }
+ 
+  #changeday {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--lighter-main);
+    box-shadow: 0rem 0.3rem;
+    color: var(--main);
+    font-size: 1.5rem;
+    align-self: center;
+  }
+  #changeday:active {
+    margin-top: 0.3rem;
+    box-shadow: 0rem 0rem;
+  }
+  #day-type, #TT {
+    font-size: min(5rem, 10vmin);
+    margin: .5rem;
+    
+  }
+
+
+
+
+astro-static-slot {
+    width: 100%;
+    height: 100%;
+}

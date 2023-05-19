@@ -5,7 +5,7 @@ let conceptName = Astro.params.concept
 
 ---
 
-<Layout client:load minimizable={true}>
+<Layout client:only="vue" minimizable={true}>
   <ConceptEdit client:only="react" conceptName={conceptName}/>
 </Layout>
 

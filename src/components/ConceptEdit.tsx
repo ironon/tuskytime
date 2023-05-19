@@ -57,7 +57,7 @@ export function ConceptEdit(props:any) {
     }
     
     return <div id="conceptedit">
-      <button id="addquestion" onClick={addQuestion}>Add Question</button>
+      {/* <button id="addquestion" onClick={addQuestion}>Add Question</button> */}
       <input id="project-name" placeholder="Project Name" value={projectName} onChange={onTitleChange}></input>
       <Excalidraw initialData={{
           //@ts-ignore
