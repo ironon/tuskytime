@@ -2,7 +2,7 @@
 import {getConcepts, createNewConcept, Concept} from "../scripts/Concepts"
 import {ref} from "vue"
 console.log("Concepts view loading!")
-let props = defineProps(["redirect"])
+const props = defineProps(["redirect"])
 let concepts = getConcepts()
 let moreMenu = ref("")
 

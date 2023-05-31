@@ -1,6 +1,6 @@
 <script setup lang="ts">
     
-    var props = defineProps(["grade"])
+    const props = defineProps(["grade"])
     var emit = defineEmits(['courseAdded'])
    
     var grade = props.grade
