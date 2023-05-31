@@ -1,6 +1,7 @@
 <script setup lang="ts">
-    import {ref} from "vue"
-    let dproperties = defineProps(["minimizable"])
+    import {ref, defineProps} from "vue"
+    const stupid_props = defineProps(["minimizable"]) // im about to smash my head through the entirity of jupiter. This line throws an undiagnosable error if you use let, but not with const. I'm literally about to explode.
+    let minimizable = stupid_props.minimizable
     let minimized_style = "display: none"
     let maximized_style = ""
     let minimized = ref(maximized_style)
