@@ -85,7 +85,10 @@
       <p id="tt-label">AND IT'S TUSKY TIME </p>
       <h1 id="TT">{{day.TT}}</h1>
       <h3 v-if="day.TT == 'Advisory'">{{getAdvisoryQuote()}}</h3>
-      <h1 v-if="day.special">(also apparently its {{day.special}})</h1>
+      <!-- <a id="formthing" href="https://docs.google.com/forms/d/e/1FAIpQLSdXZ3ZGz6pwpH3fNs4_B-35wcJWBjK15WHdbm201zkS-2q2PA/viewform?pli=1" style="color:blue -->
+      <!-- ">Please fill out 2 questions for me. (the fate of the world depends on it)</a> -->
+    
+      <h1 v-if="day.special">({{day.special}})</h1>
   
       <div id="datepickerdiv">
         <Datepicker v-model="selectedDate" id="datepicker" :enable-time-picker="false" :clearable="false"></Datepicker>
@@ -95,4 +98,6 @@
   </div>
  
 </template>
+
+
 

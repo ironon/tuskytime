@@ -382,3 +382,12 @@ astro-static-slot {
     height: 6rem;
     margin: 1rem;
 }
+#schedulenotfound {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#formthing {
+    color: blue;
+    font-family: "Comic Sans MS";
+}

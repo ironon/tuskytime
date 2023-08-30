@@ -17,16 +17,13 @@
 </script>
 
 <template>
-        <head>
-            <link rel="stylesheet" href="/assets/main.css" />
-            <link rel="stylesheet" href="/assets/style.css" />
-        </head>
+       
         <div id="default-layout">
             <button id="minimizebutton" @click="minimize" v-if="minimizable">v</button>
     
             <div id="navbox" :style="minimized">
-                <a class="nav-link" href="/study">Study</a>
-                <img src="/assets/tuskylogo.png"/>
+                <!-- <a class="nav-link" href="/study">Study</a> -->
+                <img id="logo" src="/assets/tuskylogo.png"/>
                 <h1 id="nav-title">TUSKY TIME</h1>
                 <a class="nav-link" href="/">Home</a>
             
@@ -35,10 +32,16 @@
                 <slot></slot>
             </div>
             <div id="footer">
-                <p>not affiliated with LCPS or Tuscarora but that'd be pretty cool if I was </p>
+                
                 <p>Made by David Macpherson, 875497@lcps.org</p>
                 <a href="/coolpeople">cool people list</a>
             </div>
         </div>
 </template>
 
+
+<style scoped>
+    #logo {
+        height: 80%;
+    }
+</style>
