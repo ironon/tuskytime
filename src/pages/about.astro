@@ -1,0 +1,36 @@
+---
+import DefaultLayout from "../components/layout.vue"
+---
+
+<head>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<DefaultLayout>
+    <div id="about">
+        <h1>What is Tusky Time?</h1>
+        <p>Tuscarora High School has a block of time every day that rotates between different classes that we're supposed to go to, on top of the regular rotations. This website simply displays the block of time we're supposed to go to that day. It does this by reading from the schedule, which can be found on the Tuscarora website, found here:</p>
+        <a href="https://www.lcps.org/site/default.aspx?PageType=3&ModuleInstanceID=134772&ViewID=C9E0416E-F0E7-4626-AA7B-C14D59F72F85&RenderLoc=0&FlexDataID=170043&PageID=121927">A/B Schedule</a>
+    </div>
+</DefaultLayout>
+
+<style>
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    #about {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    p {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    a {
+        font-size: 1.5em;
+        text-align: center;
+    }
+</style>

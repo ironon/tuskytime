@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import {ref} from "vue"
+
     const stupid_props = defineProps(["minimizable"]) // im about to smash my head through the entirity of jupiter. This line throws an undiagnosable error if you use let, but not with const. I'm literally about to explode.
     let minimizable = stupid_props.minimizable
     let minimized_style = "display: none"
@@ -13,7 +14,12 @@
             minimized.value = minimized_style
         }
     }
-  
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    
 </script>
 
 <template>
@@ -34,7 +40,9 @@
             <div id="footer">
                 
                 <p>Made by David Macpherson, 875497@lcps.org</p>
-                <a href="/coolpeople">cool people list</a>
+                <a href="/about">About</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSclrTR93zTJtpLnqpRWVL9fV6cSmPeo9C68mqWIkQpgO106Cw/viewform">Feedback</a>
+                <a id="standsout" href="https://loudounlunch.com">I made a thing</a>
             </div>
         </div>
 </template>
@@ -43,5 +51,8 @@
 <style scoped>
     #logo {
         height: 80%;
+    }
+    #standsout {
+        color: darkblue;
     }
 </style>
