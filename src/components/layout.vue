@@ -1,10 +1,22 @@
 <script setup lang="ts">
-    import {ref} from "vue"
+    import {onMounted, ref} from "vue"
 
     const stupid_props = defineProps(["minimizable"]) // im about to smash my head through the entirity of jupiter. This line throws an undiagnosable error if you use let, but not with const. I'm literally about to explode.
     let minimizable = stupid_props.minimizable
     let minimized_style = "display: none"
     let maximized_style = ""
+    onMounted(() => {
+        let about = document.getElementById("aboutbutton")
+        let indicator = document.getElementById("aboutpageindicator")
+        // let homebutton = document.getElementById("homebutton")
+        // 
+        if (indicator && about) {
+            about.innerText = "Home"
+            // homebutton.remove()
+            //@ts-ignore
+            about.href = "/" //this is such a hack and shouldnt work but it does AHHAHAH
+        }
+    })
     let minimized = ref(maximized_style)
     function minimize() {
         console.log("minimized")
@@ -31,7 +43,7 @@
                 <!-- <a class="nav-link" href="/study">Study</a> -->
                 <img id="logo" src="/assets/tuskylogo.png"/>
                 <h1 id="nav-title">TUSKY TIME</h1>
-                <a class="nav-link" href="/">Home</a>
+                <!-- <a class="nav-link" id="homebutton" href="/">Home</a> -->
             
             </div>
             <div id="app">
@@ -40,9 +52,9 @@
             <div id="footer">
                 
                 <p>Made by David Macpherson, 875497@lcps.org</p>
-                <a href="/about">About</a>
+                <a id="aboutbutton" href="/about">About</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSclrTR93zTJtpLnqpRWVL9fV6cSmPeo9C68mqWIkQpgO106Cw/viewform">Feedback</a>
-                <a id="standsout" href="https://loudounlunch.com">I made a thing</a>
+                <!-- <a id="standsout" href="https://loudounlunch.com">I made a thing</a> -->
             </div>
         </div>
 </template>

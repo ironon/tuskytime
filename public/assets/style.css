@@ -16,6 +16,7 @@
 html, body, #__nuxt {
     margin: 0px;
     height: 100%;
+    background-color: var(--lighter-main);
 }
 
 
@@ -151,7 +152,7 @@ select, input{
     background-color: var(--lighter-main);
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -202,7 +203,9 @@ a {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
+    transform: translateY(-2rem);
+    /* padding-top: 0rem; */
     background-color: var(--lighter-main);
   }
   #datepickerdiv {
@@ -377,6 +380,36 @@ astro-static-slot {
   
   
 }
+#donutstitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 0.2rem;
+}
+#subcaption {
+    color: black;
+    opacity: 0.9;
+    margin: 0rem;
+    margin-bottom: 1rem;
+}
+#linky {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    background-color: rgb(104, 120, 177);
+    border: 2px solid blue;
+    color: var(--dark-main);
+    padding: 0.3rem;
+}
+#donuts {
+    width: 50%;
+    height: 100%;
+    padding-top: 20rem;
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 15rem;
+    /* overflow-y: scroll; */
+}
 .addconcept{
     width: 10rem;
     height: 6rem;
@@ -390,4 +423,26 @@ astro-static-slot {
 #formthing {
     color: blue;
     font-family: "Comic Sans MS";
+}
+
+#amazingbestadvert {
+    height: 70%;
+    width: 20rem;
+    margin: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#amazingbestadvert img {
+    height: 100%;
+    /* width: 100%; */
+}
+@media (max-width: 500px) {
+    #amazingbestadvert img {
+        display: none;
+    }
+}
+#italics {
+    font-style: italic;
 }
