@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --main: rgb(37, 64, 143);
+    --mainer: rgb(90, 120, 210);
+    --dark-main: rgb(22, 38, 87);
+    --light-main: rgb(104, 130, 211);
+    --light-dark-main: rgb(157, 176, 232);
+    --lightish-main: rgb(114, 149, 247);
+    --lighter-main: rgb(157, 182, 248);
+    --date-picker-background: var(--lightish-main);
+    --date-input-width: 50%;
+
+}
+
+
+html, body, #__nuxt {
+    margin: 0px;
+    height: 100%;
+    background-color: var(--lighter-main);
+}
+
+
+#addquestions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 2px solid var(--mainer);
+    width: 20%;
+    height: 100%;
+    z-index: 50;
+}
+
+#addquestion {
+    position: fixed;
+    top: 10px; /* Adjust the top value as needed */
+    right: 10px; /* Adjust the right value as needed */
+    transform: translate(-150px, 0); /* Optional: reset any previous translation */
+    z-index: 10;
+    font-size: smaller;
+}
+p { 
+    font-weight: normal;
+}
+
+.excalidraw {
+    --color-primary: red;
+  }
+
+button {
+    padding: 0.6rem;
+    border: 0.3rem solid var(--light-main);
+    background-color: var(--lightish-main);
+    box-shadow: 0rem 0.2rem var(--light-main);
+   
+}
+button:active {
+    padding: 0.6rem;
+    position: relative;
+    
+  
+    /* margin-bottom: 0.2rem; */
+    border: 0.3rem solid var(--light-main);
+    background-color: var(--lightish-main);
+    box-shadow: 0 0;
+    
+}
+
+select, input{
+    background-color: var(--light-dark-main);
+    border: 0.15rem solid var(--main);
+    margin: 0.1rem;
+}
+
+#default-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#navbox {
+    outline: 10px solid var(--main);
+    width: 100%;
+    height: 9%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--light-main);
+    align-items: center;
+    
+}
+.cl-content {
+    background-color: blue;
+}
+#navbox a {
+    margin-left: 1rem;
+}
+
+/* Position #minimizebutton in the top right corner regardless of screen size */
+#minimizebutton {
+    position: fixed;
+    top: 10px; /* Adjust the top value as needed */
+    right: 10px; /* Adjust the right value as needed */
+    transform: translate(-100px, 0); /* Optional: reset any previous translation */
+    z-index: 10;
+}
+#navbox img {
+    max-height: 5rem;
+}
+#small-text {
+    font-size: small;
+}
+#smaller-text {
+    font-size: xx-small;
+}
+#nav-title {
+    margin-left: 1ch;
+    font-size: min(2.5rem, 8vmin);
+   
+    text-align: center;
+    margin: 0;
+}
+#app .excalidraw {
+    --color-primary: var(--main);
+  --color-primary-darker: var(--light-dark-main);
+  --color-primary-darkest: var(--dark-main);
+  --color-primary-light: var(--light-main);
+}
+.nav-link {
+    font-size: larger;
+    margin-left: 1ch;
+    color: var(--dark-main);
+    text-decoration: underline;;
+}
+.coming-soon {
+    font-size: larger;
+    margin-left: 1ch;
+    color: var(--dark-main);
+    text-decoration: underline;
+    user-select:none;
+
+}
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    border: 2px solid black;
+    background-color: var(--light-main);
+    top: 4rem;
+    left: 0rem;
+    display: none;
+}
+.coming-soon:hover ~ .tooltip {
+    visibility: visible;
+    display: block;
+    position: absolute;
+    
+}
+#app {
+    background-color: var(--lighter-main);
+    width: 100%;
+    height: 100%;
+    /* overflow-y: hidden; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    font-weight: normal;
+    text-decoration:underline;
+    color: var(--dark-main);
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+#footer p {
+    color: var(--dark-main);
+    font-size: small;
+}
+#conceptedit{
+    width: 100%;
+    height: 100%;
+}
+#project-name {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  #main-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+}
+
+
+#tt-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    transform: translateY(-2rem);
+    /* padding-top: 0rem; */
+    background-color: var(--lighter-main);
+  }
+  #datepickerdiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+  .dp__theme_light {
+    --dp-background-color: rgb(129, 158, 236);
+    --dp-text-color: #3242f1;
+    --dp-hover-color: #442bd0;
+    --dp-hover-text-color: #212121;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #1976d2;
+    --dp-primary-text-color: #f8f5f5;
+    --dp-secondary-color: #0a2c70;
+    --dp-border-color: rgb(33, 5, 245);
+    --dp-menu-border-color: rgb(21, 21, 220);
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: #3a41c4;
+    --dp-success-color-disabled: #a3d9b1;
+    --dp-icon-color: #083adf;
+    --dp-danger-color: #8ef1e9;
+    --dp-highlight-color: rgba(25, 118, 210, 0.1);
+ }
+  #tt-info {
+    text-align: center;
+    width: 42%;
+    font-size: min(1rem, 2.5vmin);
+  }
+  #tt-info img {
+    width: 100%;
+  }
+ 
+  #changeday {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--lighter-main);
+    box-shadow: 0rem 0.3rem;
+    color: var(--main);
+    font-size: 1.5rem;
+    align-self: center;
+  }
+  #changeday:active {
+    margin-top: 0.3rem;
+    box-shadow: 0rem 0rem;
+  }
+  #day-type, #TT {
+    font-size: min(5rem, 10vmin);
+    margin: .5rem;
+    
+  }
+
+
+
+
+astro-static-slot {
+    width: 100%;
+    height: 100%;
+}
+
+#moremenu{
+    width: 2rem;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, 100%);
+    border: 2px solid var(--dark-main);
+}
+#moremenu img{
+    width: 100%;
+    height: auto;
+}
+#conceptview {
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+#imghold {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.conceptbutton {
+    width: 10rem;
+    height: 6rem;
+    border: 0.1rem solid var(--light-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    
+}
+.conceptbutton img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .7;
+}
+.conceptbutton a {
+    text-align: center;
+    /* transform: translate(0%, 150%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    font-weight: bold;
+}
+.conceptbutton button {
+  
+    /* transform: translate(0%, 150%); */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: black;
+    font-weight: bold;
+    border: 0px;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    opacity: 0.7;
+    box-shadow: 0 0;
+    
+    
+}
+
+.conceptbutton button:active {
+  
+  /* transform: translate(0%, 150%); */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--main);
+  font-weight: bold;
+  border: 0px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  opacity: 0.7;
+
+  
+  
+}
+
+.conceptbutton button p {
+  
+  /* transform: translate(0%, 150%); */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: black;
+  font-weight: bold;
+  border: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.5rem;
+  font-weight:bold;
+  text-align: center;
+  transform: scale(2) translate(0, 30%);
+
+  
+  
+}
+#donutstitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 0.2rem;
+}
+#subcaption {
+    color: black;
+    opacity: 0.9;
+    margin: 0rem;
+    margin-bottom: 1rem;
+}
+#linky {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    background-color: rgb(104, 120, 177);
+    border: 2px solid blue;
+    color: var(--dark-main);
+    padding: 0.3rem;
+}
+#donuts {
+    width: 50%;
+    height: 100%;
+    padding-top: 20rem;
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 15rem;
+    /* overflow-y: scroll; */
+}
+.addconcept{
+    width: 10rem;
+    height: 6rem;
+    margin: 1rem;
+}
+#schedulenotfound {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#formthing {
+    color: blue;
+    font-family: "Comic Sans MS";
+}
+
+#amazingbestadvert {
+    height: 70%;
+    width: 20rem;
+    margin: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#amazingbestadvert img {
+    height: 100%;
+    /* width: 100%; */
+}
+@media (max-width: 500px) {
+    #amazingbestadvert img {
+        display: none;
+    }
+}
+#italics {
+    font-style: italic;
+}
