@@ -16,7 +16,7 @@
   </script>
  <div id="anntable">
    <Table.Root>
-     <Table.Caption>Announcements</Table.Caption>
+     <!-- <Table.Caption>Announcements</Table.Caption> -->
      <Table.Header>
        <Table.Row>
          <Table.Head class="w-[100px]">Title</Table.Head>

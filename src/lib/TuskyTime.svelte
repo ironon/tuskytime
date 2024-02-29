@@ -164,7 +164,7 @@
         <h1 id="TT">{day.TT}</h1>
         {#if day.TT == "Advisory"}
 
-        <h3>{getAdvisoryQuote()}</h3>
+        <h3 id="advisoryquote">{getAdvisoryQuote()}</h3>
         {/if}
         <!-- <p>Current Block:</p> -->
         <p id="italics">{block_info.block}</p>
@@ -185,7 +185,11 @@
       <!-- <Advert :ad="getAd"/> -->
     </div>
    
-
+<style>
+  #advisoryquote{
+    font-style: italic;
+  }
+</style>
   
   
   
