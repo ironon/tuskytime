@@ -30,6 +30,7 @@
     "firebase": "^10.8.0",
     "flowbite-svelte": "^0.44.24",
     "lucide-svelte": "^0.340.0",
+    "nanoid": "^5.0.6",
     "tailwind-merge": "^2.2.1",
     "tailwind-variants": "^0.2.0"
   }

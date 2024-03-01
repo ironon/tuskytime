@@ -12,6 +12,9 @@
         posts = await firebase.getPosts(10)
 
     })
+    let getURL = (id) => {
+      return "/posts/" + id
+    }
     
   </script>
  <div id="anntable">
@@ -26,7 +29,7 @@
      <Table.Body>
        {#each posts as post, i (i)}
          <Table.Row>
-           <Table.Cell class="font-medium">{post.title}</Table.Cell>
+           <Table.Cell class="font-medium"><a href={getURL(post.id)}>{post.title}</a></Table.Cell>
            <Table.Cell>{post.author}</Table.Cell>
          </Table.Row>
        {/each}

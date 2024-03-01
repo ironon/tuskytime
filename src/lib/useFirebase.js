@@ -1,6 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import {nanoid} from "nanoid"
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, get, child, ref, set, onValue, limitToFirst, query } from "firebase/database";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth"
@@ -76,16 +77,17 @@ export async function isSignedIn() {
  * @param {string} html
  */
 export async function postAnnouncement(title, html) {
-
-    const postsRef = ref(database, `posts/${btao(title)}`);
-
+    let id = nanoid()
+    const postsRef = ref(database, `posts/${id}`);
+    
     // Create an object with the provided strings
     const postData = {
-        title: title,
-        html: html,
-        author: auth.currentUser?.email,
-        author_id: auth.currentUser?.uid,
-        date: Date.now()
+        "title": title,
+        "html": html,
+        "id": id,
+        "author": auth.currentUser?.email,
+        "author_id": auth.currentUser?.uid,
+        "date": Date.now()
 
     };
 
@@ -101,9 +103,15 @@ export async function postAnnouncement(title, html) {
 }
 
 /**
- * @param {number} amount
+ * @param {string} id
+ * 
  */
-
+export async function getPost(id) {
+    let loc = ref(database, `posts/${id}`)
+    let data = await (await get(loc)).val()
+    return data
+    
+}
 /**
  * @param {string} email
  * @param {string} password

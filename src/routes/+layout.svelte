@@ -1,9 +1,13 @@
 <script>
+    import { isSignedIn } from "$lib/useFirebase";
     import "../app.pcss";
     // import "../style.css";
     import "../main.css"
     import { onMount } from 'svelte';
-   
+    onMount(() => {
+
+      let signedIn = isSignedIn()
+    })
   </script>
   
   <div id="default-layout">
@@ -11,7 +15,13 @@
     <div id="navbox">
       <img id="logo" src="/tuskylogo.png">
       <h1 id="nav-title">TUSKY TIME</h1>
-      <a href="/announcement">Announcement</a>
+      {#await signedIn}
+        
+      {:then signedInA} 
+        {#if signedInA}
+        <a href="/announcement">Announcement</a>
+        {/if}
+      {/await}
     </div>
     
     <div id="app">
@@ -33,6 +43,7 @@
     height: min-content;
     flex-direction: column;
     justify-content:start;
+    height: 100%;
   }
   #footer {
     bottom: 0;
@@ -48,8 +59,11 @@
   
     #app {
       overflow-y:scroll;
+      flex-shrink: 0;
       display: flex;
+      padding-top: 4rem;
       justify-content: baseline;
+      height: 100%;
       /* margin-top: 9%; */
     }
     #footer p, a {

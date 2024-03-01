@@ -36,7 +36,7 @@
     <label for="title">Title:</label>
     <input id="title" type="text" bind:value={title}/>
 
-    {@html html}
+    <!-- {@html html} -->
     <Editor {html} colors={colors} on:change={(evt)=>html = evt.detail}/>
     <button id="post" on:click={post}>POST</button>
 </div>
