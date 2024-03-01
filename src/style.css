@@ -308,6 +308,10 @@ astro-static-slot {
     left: 0;
     opacity: .7;
 }
+img{
+object-fit: fill;
+width: 50%;
+}
 .conceptbutton a {
     text-align: center;
     /* transform: translate(0%, 150%); */

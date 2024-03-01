@@ -86,6 +86,7 @@ export async function postAnnouncement(title, html) {
         "html": html,
         "id": id,
         "author": auth.currentUser?.email,
+        "author_name": auth.currentUser?.displayName,
         "author_id": auth.currentUser?.uid,
         "date": Date.now()
 

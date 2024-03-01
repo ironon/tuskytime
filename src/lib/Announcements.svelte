@@ -13,7 +13,7 @@
 
     })
     let getURL = (id) => {
-      return "/posts/" + id
+      return "/posts?id=" + id
     }
     
   </script>
@@ -39,7 +39,7 @@
   </div>
   <style>
     #anntable {
-      width: 40%;
-      height: 40%;
+      /* width: 40%; */
+      /* height: 40%; */
     }
   </style>

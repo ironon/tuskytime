@@ -1,12 +1,16 @@
 <script>
-    import { isSignedIn } from "$lib/useFirebase";
+    // import { isSignedIn } from "$lib/useFirebase";
     import "../app.pcss";
     // import "../style.css";
     import "../main.css"
     import { onMount } from 'svelte';
-    onMount(() => {
-
-      let signedIn = isSignedIn()
+    /**
+     * @type {null|boolean}
+     */
+    let signedIn = null
+    onMount(async () => {
+      let firebase = await import("$lib/useFirebase")
+      signedIn = await firebase.isSignedIn()
     })
   </script>
   
@@ -14,7 +18,9 @@
  
     <div id="navbox">
       <img id="logo" src="/tuskylogo.png">
-      <h1 id="nav-title">TUSKY TIME</h1>
+      <a href="/" id="nav-title">TUSKY TIME</a>
+      {#if signedIn != null}
+        
       {#await signedIn}
         
       {:then signedInA} 
@@ -22,6 +28,7 @@
         <a href="/announcement">Announcement</a>
         {/if}
       {/await}
+      {/if}
     </div>
     
     <div id="app">
@@ -38,12 +45,17 @@
  
 <style>
   #default-layout {
-    overflow-y:hidden;
+    overflow-y:scroll;
     display: flex;
     height: min-content;
     flex-direction: column;
     justify-content:start;
     height: 100%;
+  }
+  #nav-title {
+    font-weight: bold;
+    opacity: 1;
+    color: black;
   }
   #footer {
     bottom: 0;
@@ -62,7 +74,8 @@
       flex-shrink: 0;
       display: flex;
       padding-top: 4rem;
-      justify-content: baseline;
+      justify-content: space-between;
+   
       height: 100%;
       /* margin-top: 9%; */
     }

@@ -55,5 +55,6 @@
         /* justify-content: center; */
         flex-direction: column;
         justify-content: space-between;
+        max-width: 80%;
     }
 </style>
