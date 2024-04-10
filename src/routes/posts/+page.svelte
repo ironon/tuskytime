@@ -1,6 +1,17 @@
 <script>
 // @ts-nocheck
+    function unixTimeToDateString(unixTime) {
+        // Create a new Date object using the Unix time (in milliseconds)
+        const date = new Date(unixTime);
 
+        // Extract the components of the date
+        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        const day = date.getDate().toString().padStart(2, '0');
+        const year = date.getFullYear();
+
+        // Return the formatted date string
+        return `${month}/${day}/${year}`;
+    }
 
     // import {getPost} from "$lib/useFirebase"
     import {onMount} from "svelte"
@@ -71,7 +82,8 @@
         {/if}
         <!-- {email} -->
         <h1>{data.title}</h1>
-        <h3>By {data.author_name}</h3>
+        <h4>By {data.author_name}</h4>
+        <h4>{unixTimeToDateString(data.date)}</h4>
         <p>{@html data.html}</p>
     </div>
 
@@ -88,6 +100,9 @@
         display: flex;
         flex-direction: column;
         /* juv  */
+    }
+    h4 {
+        margin-top: 0.5rem;
     }
    
     #del-post {

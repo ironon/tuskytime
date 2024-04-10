@@ -75,7 +75,8 @@
   }
   
     #app {
-      overflow-y:scroll;
+      overflow-y:hidden;
+      scrollbar-color: red;
       flex-shrink: 0;
       display: flex;
       padding-top: 4rem;
