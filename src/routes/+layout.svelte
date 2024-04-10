@@ -1,7 +1,7 @@
 <script>
     // import { isSignedIn } from "$lib/useFirebase";
     import "../app.pcss";
-    // import "../style.css";
+    import "../assets/style.css";
     import "../main.css"
     import { onMount } from 'svelte';
     /**
@@ -10,15 +10,18 @@
     let signedIn = null
     onMount(async () => {
       let firebase = await import("$lib/useFirebase")
-      signedIn = await firebase.isSignedIn()
+      signedIn = (await firebase.getUser()) != null
     })
   </script>
   
   <div id="default-layout">
  
     <div id="navbox">
-      <img id="logo" src="/tuskylogo.png">
-      <a href="/" id="nav-title">TUSKY TIME</a>
+      {#if signedIn}
+      <a href="/signout">Sign Out</a>
+      {/if}
+      <img id="logo" on:click={() => window.location.href="/"} src="/tuskylogo.png">
+      <!-- <a href="/" id="nav-title">TUSKY TIME</a> -->
       {#if signedIn != null}
         
       {#await signedIn}
@@ -38,6 +41,8 @@
         <p id="me">Made by David Macpherson, 875497@lcps.org</p>
         <a id="aboutbutton" href="/about">About</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSclrTR93zTJtpLnqpRWVL9fV6cSmPeo9C68mqWIkQpgO106Cw/viewform">Feedback</a>
+        <a href="/coolpeople">Credits</a>
+        <a href="/links">Other websites</a>
       </div>
     </div>
     
@@ -102,8 +107,34 @@
     /* position: static; */
     
 }
+#navbox a{
+  min-width: 10rem;
+  font-size:larger;
+}
+
 #navbox img {
   max-width: 5%;
+}
+@media only screen and (max-width: 500px) {
+  #navbox a {
+    display: none;
+  }
+  #navbox img {
+    display: flex;
+    aspect-ratio: 1;
+    /* width: 20vw; */
+    max-width: max-content;
+    height: 20vw;
+  }
+  #footer {
+    display: block;
+    justify-content: center;
+    /* margin-top: 5rem; */
+  }
+  #footer a {
+    margin-right: 20px;
+  }
+
 }
 </style>
   

@@ -117,14 +117,13 @@
      }
      let times = Object.keys(schedule)
      let currentTime = getTimeInHHMM()
-     console.log(currentTime)
-     console.log(times)
+    
      let range = findMatchingRange(currentTime, times)
      if (range == null) {
       return {block:"",lunch:""}
      }
      let blockstuff = `${schedule[range]}: ${range}`
-     console.log(currentTime)
+  
      let lrange = findMatchingRange(currentTime, Object.keys(lunchTimes))
      if (lrange == null) {
       return {block:blockstuff,lunch:""}
@@ -189,6 +188,15 @@
   #advisoryquote{
     font-style: italic;
   }
+  @media only screen and (max-width: 500px) {
+   #tt-menu {
+    width: 100%;
+    justify-content: space-around;
+   }
+   #tt-info {
+    transform: scale(1.5);
+   }
+}
 </style>
   
   

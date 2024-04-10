@@ -1,0 +1,26 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "false",
+    "posts": {
+      ".read": true,
+      ".write": false,
+      "$postId": {
+        ".write": "(auth.uid == root.child('posts').child($postId).child('author_id').val()) || (!root.child('posts').child($postId).exists() && auth.uid != null)"
+      }
+      	
+    },
+    "users": {
+      ".read": true,
+      ".write": false,
+      "$userId": {
+        ".write": "auth.uid == $userId || (!root.child('posts').child($userId).exists() && auth.uid != null)"
+      }
+      	
+    },
+    "whitelist": {
+      ".write": "false",
+      ".read": "true"
+    }
+  }
+}

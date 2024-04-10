@@ -10,6 +10,7 @@
     onMount(async () => {
         firebase = await import("./useFirebase")
         posts = await firebase.getPosts(10)
+        // posts.reverse()
 
     })
     let getURL = (id) => {
@@ -30,7 +31,7 @@
        {#each posts as post, i (i)}
          <Table.Row>
            <Table.Cell class="font-medium"><a href={getURL(post.id)}>{post.title}</a></Table.Cell>
-           <Table.Cell>{post.author}</Table.Cell>
+           <Table.Cell>{post.author_name}</Table.Cell>
          </Table.Row>
        {/each}
      </Table.Body>
