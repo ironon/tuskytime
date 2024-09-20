@@ -29,6 +29,7 @@
     "clsx": "^2.1.0",
     "date-picker-svelte": "^2.10.1",
     "firebase": "^10.8.0",
+    "firebase-admin": "^12.5.0",
     "flowbite-svelte": "^0.44.24",
     "lucide-svelte": "^0.340.0",
     "nanoid": "^5.0.6",

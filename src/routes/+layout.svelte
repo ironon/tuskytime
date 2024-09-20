@@ -19,6 +19,9 @@
     <div id="navbox">
       {#if signedIn}
       <a href="/signout">Sign Out</a>
+
+      {:else}
+      <a href="/signin">Sign In</a>
       {/if}
       <img id="logo" on:click={() => window.location.href="/"} src="/tuskylogo.png">
       <!-- <a href="/" id="nav-title">TUSKY TIME</a> -->

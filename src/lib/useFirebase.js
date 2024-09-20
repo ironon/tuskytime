@@ -47,7 +47,7 @@ export async function getPosts(amount) {
         return []
     }
     value = Object.values(value)
-
+    // value = value.reverse()
     // console.log(value)
     return value
 }
@@ -57,13 +57,14 @@ export async function getPosts(amount) {
  */
 export async function checkWhitelisted(email) {
 
-    //   const userRef = ref(database, "whitelist/"+btoa(email))  
-    let data = await get(child(dbRef, `whitelist/${btao(email)}`))
-    if (data.exists()) {
-        return true
-    } else {
+
+    let uuid = (await get(child(dbRef, `email/${btoa(email)}`))).val()
+    console.log(uuid)
+    if (!uuid) {
         throw Error("You are not on the whitelist!")
     }
+    return true
+ 
 
 }
 
@@ -98,6 +99,7 @@ async function modifyAnnoucement(id, title, html) {
         "html": html,
         "id": id,
         "author": auth.currentUser?.email,
+        "base64": btao(auth.currentUser?.email),
         "author_name": userData.name,
         "author_id": auth.currentUser?.uid,
         "date": Date.now()

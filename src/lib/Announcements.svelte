@@ -23,7 +23,7 @@
      <!-- <Table.Caption>Announcements</Table.Caption> -->
      <Table.Header>
        <Table.Row>
-         <Table.Head class="w-[100px]">Title</Table.Head>
+         <!-- <Table.Head class="w-[100px]">Title</Table.Head> -->
       
        </Table.Row>
      </Table.Header>
