@@ -19,7 +19,9 @@
 <div id="about">
     <h1 id="aboutpageindicator">What is Tusky Time?</h1>
     <p>Tuscarora High School has a block of time every day that rotates between different classes that we're supposed to go to, on top of the regular rotations. This website simply displays the block of time we're supposed to go to that day. It does this by reading from the schedule, which can be found on the Tuscarora website, found here:</p>
-    <a href="https://www.lcps.org/site/default.aspx?PageType=3&ModuleInstanceID=134772&ViewID=C9E0416E-F0E7-4626-AA7B-C14D59F72F85&RenderLoc=0&FlexDataID=170043&PageID=121927">A/B Schedule</a>
+    <a href="/tt.pdf">TuskyTime Schedule</a>
+    <a href="/tuskytime.json">TuskyTime Schedule (JSON Format)</a>
+
 </div>
 
   

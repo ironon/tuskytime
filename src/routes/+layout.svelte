@@ -38,10 +38,10 @@
     
       <slot></slot>
       <div id="footer">
-        <p id="me">Made by David Macpherson, 875497@lcps.org</p>
+        <a href="https://davidism.net " id="me">Who made this?</a>
         <a id="aboutbutton" href="/about">About</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSclrTR93zTJtpLnqpRWVL9fV6cSmPeo9C68mqWIkQpgO106Cw/viewform">Feedback</a>
-        <a href="/coolpeople">Credits</a>
+        <a href="/coolpeople">Other Credits</a>
         <a href="/links">Other websites</a>
       </div>
     </div>
@@ -63,19 +63,18 @@
     color: black;
   }
   #footer {
-    bottom: 0;
-    left: 0;
+   
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     width: 100%;
-    margin-top: 5rem;
+    /* padding-top: 5rem; */
     background-color: var(--lighter-main);
     position:static;
   }
   
     #app {
-      overflow-y:hidden;
+      /* overflow-y:hidden; */
       scrollbar-color: red;
       flex-shrink: 0;
       display: flex;

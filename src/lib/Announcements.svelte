@@ -24,14 +24,14 @@
      <Table.Header>
        <Table.Row>
          <Table.Head class="w-[100px]">Title</Table.Head>
-         <Table.Head>Author</Table.Head>
+      
        </Table.Row>
      </Table.Header>
      <Table.Body>
        {#each posts as post, i (i)}
          <Table.Row>
            <Table.Cell class="font-medium"><a href={getURL(post.id)}>{post.title}</a></Table.Cell>
-           <Table.Cell>{post.author_name}</Table.Cell>
+        
          </Table.Row>
        {/each}
      </Table.Body>

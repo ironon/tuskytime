@@ -188,13 +188,42 @@
   #advisoryquote{
     font-style: italic;
   }
+  #tt-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-height: 50%;
+    max-height: fit-content;
+    /* transform: translateY(-2rem); */
+    /* margin-bottom: 8rem; */
+    /* padding-top: 0rem; */
+    background-color: var(--lighter-main);
+  }
   @media only screen and (max-width: 500px) {
    #tt-menu {
     width: 100%;
     justify-content: space-around;
+    
+    /* height: 100%; */
+    display: flex;
+    /* margin-top: 4rem; */
+    
    }
+
+   
    #tt-info {
-    transform: scale(1.5);
+    /* transform: scale(1.5); */
+    flex-grow: 2;
+    
+    /* min-height: 50vh; */
+   }
+   #tt-info p {
+      font-size: medium;
+   }
+   #tt-info h1 {
+    font-size: 2rem;
    }
 }
 </style>
