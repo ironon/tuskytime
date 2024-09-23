@@ -57,7 +57,10 @@ export async function getPosts(amount) {
  */
 export async function checkWhitelisted(email) {
 
-
+    if (email == "" || email == " " || email == "davidsucks") {
+        throw Error("nice try bozo")
+        return false
+    }
     let uuid = (await get(child(dbRef, `email/${btoa(email)}`))).val()
     console.log(uuid)
     if (!uuid) {

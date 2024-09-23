@@ -1,3 +1,4 @@
+// DO NOT EDIT THIS IN THE WEBGUI - IT WILL GET OVERWRITTEN
 {
   "rules": {
     ".read": "true",
@@ -6,7 +7,7 @@
       ".read": true,
       ".write": false,
       "$postId": {
-        ".write": "(auth.uid == root.child('posts').child($postId).child('author_id').val()) || (!root.child('posts').child($postId).exists() && auth.uid != null)"
+        ".write": "auth.uid == root.child('email').child((newData.child('base64').val())).val() && ((auth.uid == root.child('posts').child($postId).child('author_id').val()) || (!root.child('posts').child($postId).exists() && auth.uid != null))"
       }
       	
     },
@@ -18,9 +19,9 @@
       }
       	
     },
-    "whitelist": {
+    "email": {
       ".write": "false",
-      ".read": "true"
+      ".read": "false"
     }
   }
 }

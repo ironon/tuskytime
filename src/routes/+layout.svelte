@@ -25,15 +25,12 @@
       {/if}
       <img id="logo" on:click={() => window.location.href="/"} src="/tuskylogo.png">
       <!-- <a href="/" id="nav-title">TUSKY TIME</a> -->
-      {#if signedIn != null}
+      {#if signedIn}
         
-      {#await signedIn}
-        
-      {:then signedInA} 
-        {#if signedInA}
         <a href="/announcement">Announcement</a>
-        {/if}
-      {/await}
+      
+      {:else}
+      <p style="opacity: 0">THIS IS AN EASTEREGG</p>
       {/if}
     </div>
     

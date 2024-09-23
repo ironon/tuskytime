@@ -34,15 +34,24 @@
     try {
       console.log(getFirebase());
       whitelisted = await getFirebase().checkWhitelisted(email)
+      return true
       // If successful login, you can navigate to another page or show a success message
     } catch (err) {
       error = err.message;
+      return false
     }
   }
+  const checkW = () => {
+    email
+  }
   const handleLogin = async () => {
+
     error = ''
     if (email == "" || password == "") {
       error = "please actually type an email and password";
+    }
+    if (!(await checkWhitelisted())) {
+      return
     }
 
     try {
@@ -57,6 +66,9 @@
   };
 
   const handleSignup = async () => {
+    if (!(await checkWhitelisted())) {
+      return
+    }
     try {
       await firebase.signup(email, password, name);
       window.location.href = "/verifyemail"
@@ -84,8 +96,9 @@
 
 
 <form id="signin">
+ 
   <label for="email">Email:</label>
-  <input type="email" id="email" bind:value={email} />
+  <input type="email" id="email" bind:value={email}  />
 
   {#if !isLogin}
   <label for="name">Name:</label>
@@ -94,9 +107,10 @@
 
   <label for="password">Password:</label>
   <input type="password" id="password" bind:value={password} />
-
+  <p>It is recommended to not use your school email, <br> as LCPS makes email verification hard.</p>
   {#if isLogin}
     <button type="button" on:click={handleLogin}>Login</button>
+ 
     <p>
       Don't have an account? <a href="#" on:click={() => (isLogin = false)}
         >Sign up</a
@@ -124,7 +138,8 @@
   <input type="email" id="email" bind:value={email} />
   <button id="checkwhitelisted" type="button" on:click={checkWhitelisted}>→ </button>
   {/if}
-
+ 
+  <a id="accessform" href="https://docs.google.com/forms/d/e/1FAIpQLSfc1O13jFElyNmTgnrvxxQm80ue_ixubRvEIOpZHZv2bSlkSw/viewform">I want access!</a>
   
 </div>
 
@@ -136,6 +151,9 @@
   }
   #signin input {
     margin-bottom: 1rem;
+  }
+  #accessform {
+    margin-top: 2rem;
   }
   #checkwhitelisted {
     font-size: 2rem;
