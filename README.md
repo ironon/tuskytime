@@ -1,38 +1,7 @@
-# create-svelte
+# TuskyTime
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Website I made for my school to help with scheduling issues. 
+Feel free to fork or do whatever with it, if you submit a pull request I'll look at it and merge it if I like how it takes the project.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+If you are not a senior and think you have the capabilities to run TuskyTime in the future (after I graduate), take a look at this form.
+https://docs.google.com/forms/d/e/1FAIpQLScY3Aw4RDMhNS7qlhBdPk3NgZ9fdXfYLYjRs5HfZaM63tP6mg/viewform
